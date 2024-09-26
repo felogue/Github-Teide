@@ -1,0 +1,6 @@
+.flexbox-ingredientes {
+    display: flex;
+    flex-direction: row-reverse;
+    gap: 1rem;
+}
+

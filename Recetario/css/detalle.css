@@ -1,0 +1,148 @@
+h2.receta-detalle {
+  font-size: 1.8rem;
+}
+
+/* Estilos generales */
+
+.receta-detalle {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.receta-detalle img {
+  max-width: 100%;
+  height: auto;
+  object-fit: cover;
+  border-radius: var(--border-radius);
+}
+
+/* Estilos para las tablas */
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-bottom: 20px;
+}
+
+th,
+td {
+  padding: 10px;
+  border-bottom: 1px solid var(--color-background);
+  text-align: left;
+}
+
+th {
+  background-color: var(--color-secondary);
+  color: var(--color-text-light);
+}
+
+.detalle-receta-especificacion tr {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.detalle-receta-especificacion th,
+.detalle-receta-especificacion td {
+  flex: 1 1 50%;
+  box-sizing: border-box;
+  word-break: break-word;
+  overflow-wrap: break-word;
+}
+
+/* Estilos para el botón de volver */
+
+.button:hover {
+  background-color: var(--color-accent);
+}
+
+/* Estilos responsive */
+@media screen and (min-width: 768px) {
+  .receta-detalle {
+    flex-direction: row;
+    flex-wrap: wrap;
+  }
+
+  .receta-detalle img {
+    max-width: 600px;
+    width: 100%;
+  }
+
+  .receta-detalle > * {
+    flex: 1 1 300px;
+  }
+}
+
+@media screen and (max-width: 767px) {
+  table:not(.detalle-receta-especificacion),
+  table:not(.detalle-receta-especificacion) thead,
+  table:not(.detalle-receta-especificacion) tbody,
+  table:not(.detalle-receta-especificacion) th,
+  table:not(.detalle-receta-especificacion) td,
+  table:not(.detalle-receta-especificacion) tr {
+    display: block;
+  }
+
+  table:not(.detalle-receta-especificacion) thead tr {
+    position: absolute;
+    top: -9999px;
+    left: -9999px;
+  }
+
+  table:not(.detalle-receta-especificacion) tr {
+    margin-bottom: 15px;
+    border-bottom: 2px solid var(--color-background);
+  }
+
+  table:not(.detalle-receta-especificacion) td {
+    position: relative;
+    padding-left: 50%;
+    text-align: right;
+  }
+
+  table:not(.detalle-receta-especificacion) td:before {
+    content: attr(data-label);
+    position: absolute;
+    left: 6px;
+    width: 45%;
+    padding-right: 10px;
+    white-space: nowrap;
+    text-align: left;
+    font-weight: bold;
+  }
+
+  /* Mantener el diseño de la tabla detalle-receta-especificacion en móvil */
+  .detalle-receta-especificacion tr {
+    display: flex;
+    flex-wrap: wrap;
+    margin-bottom: 10px;
+  }
+
+  .detalle-receta-especificacion th,
+  .detalle-receta-especificacion td {
+    flex: 1 1 100%;
+    box-sizing: border-box;
+    text-align: left;
+    padding: 5px;
+  }
+
+  .detalle-receta-especificacion th {
+    font-weight: bold;
+    /* background-color: transparent; */
+    color: inherit;
+  }
+
+  /* Estilos específicos para URLs largas */
+  .detalle-receta-especificacion td {
+    word-break: break-all;
+    overflow-wrap: break-word;
+    hyphens: auto;
+  }
+
+  /* Estilos específicos para dispositivos móviles pequeños */
+  @media screen and (max-width: 374px) {
+    .detalle-receta-especificacion th,
+    .detalle-receta-especificacion td {
+      font-size: 0.9em;
+    }
+  }
+}

@@ -1,0 +1,437 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  /* Paleta de colores */
+  --color-primary: #ff972c; /* Naranja oscuro */
+  --color-secondary: #7aac36; /* Verde */
+  --color-accent: #ffbf2b; /* Naranja */
+  --color-background: #e2dfd0; /* Gris */
+  --color-text: #393939; /* Gris oscuro */
+  --color-text-light: #FFFFFF; /* Blanco */
+
+  /* Tipografía */
+  --font-main: 'Arial', sans-serif;
+  --font-heading: 'Georgia', serif;
+
+  /* Espaciado */
+  --spacing-small: 0.5rem;
+  --spacing-medium: 1rem;
+  --spacing-large: 2rem;
+
+  /* Bordes y sombras */
+  --border-radius: 5px;
+  --box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+a {
+  text-decoration: none;
+}
+
+body {
+  font-family: var(--font-main);
+  background-color: var(--color-background);
+  background-image: url(../images/pattern.png);
+  color: var(--color-text);
+  line-height: 1.6;
+  margin: 0;
+  padding: 0;
+  scrollbar-color: var(--color-primary) var(--color-accent);
+  /* scrollbar-width: none; */
+}
+
+/* Contenedor de la página */
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: var(--spacing-medium);
+  background-color: var(--color-text-light);
+}
+
+/* Header */
+header {
+  background-color: var(--color-primary);
+  color: var(--color-text-light);
+  padding: var(--spacing-medium);
+  display: flex;
+  align-items: center;
+  border-radius: 7px;
+  box-shadow: 2px 2px 5px 2px rgba(0, 0, 0, 0.3);
+  -webkit-border-radius: 7px;
+  -moz-border-radius: 7px;
+  -ms-border-radius: 7px;
+  -o-border-radius: 7px;
+  width: 100%;
+}
+
+
+header h1 {
+  font-family: var(--font-heading);
+  margin: 0;
+  text-shadow: 0px 2px 1px #333;
+  font-size: 2rem;
+}
+
+#logo {
+  display: flex;
+  width: 60%;
+}
+
+#logo a{
+  text-decoration: none;
+  color: inherit;
+}
+
+.navbar {
+  display: flex;
+  align-items: center;
+  width: 40%;
+  justify-content: space-evenly;
+  padding: var(--spacing-medium);
+  background-color: var(--color-secondary);
+  border-radius: 5px;
+  -webkit-border-radius: 5px;
+  -moz-border-radius: 5px;
+  -ms-border-radius: 5px;
+  -o-border-radius: 5px;
+  box-shadow: 2px 2px 3px 1px rgba(0, 0, 0, 0.3);;
+}
+
+.navbar ul {
+  list-style: none;
+  display: flex;  
+}
+
+.navbar ul li {
+  font-size: 1.3rem;
+}
+
+nav a {
+  color: var(--color-text-light);
+  text-decoration: none;
+  padding: var(--spacing-medium);
+}
+
+nav a:hover {
+  background-color: var(--color-accent);
+  border-radius: var(--border-radius);
+}
+/* Fin del header */
+
+/* Contenido main */
+main {
+  display: grid;
+  grid-template-columns: 100%;
+  gap: var(--spacing-large);
+  padding: var(--spacing-large);
+}
+
+/* Card */
+.card {
+  background-color: var(--color-text-light);
+  border-radius: var(--border-radius);
+  box-shadow: var(--box-shadow);
+  overflow: hidden;
+  width: 50%;
+  margin: 0 auto;
+}
+
+/* Imagen Miniatura listado recetas */
+.receta-thumbnail{
+  max-width: 150px;
+  height: 115px;
+  object-fit: cover;
+}
+
+.card-content {
+  padding: var(--spacing-small);
+}
+
+.card h2, .card-listado h2 {
+  font-family: var(--font-heading);
+  color: var(--color-primary);
+  margin-top: 0;
+}
+
+.card-listado {
+  background-color: var(--color-text-light);
+  border-radius: var(--border-radius);
+  box-shadow: var(--box-shadow);
+  overflow: hidden;
+}
+
+/* Fin card */
+
+form {
+  display: grid;
+  gap: var(--spacing-small);
+}
+
+label {
+  font-weight: bold;
+}
+
+input, select, textarea {
+  width: 100%;
+  padding: var(--spacing-small);
+  border: 1px solid var(--color-background);
+  border-radius: var(--border-radius);
+}
+
+button, .button {
+  background-color: var(--color-primary);
+  color: var(--color-text-light);
+  border: none;
+  padding: var(--spacing-small) var(--spacing-medium);
+  border-radius: var(--border-radius);
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+
+button:hover {
+  background-color: var(--color-accent);
+}
+
+/* Listado */
+.btn {
+  padding: 8px 12px;
+  margin: 4px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 14px;
+  transition: background-color 0.3s ease;
+}
+
+.btn-view {
+  background-color: var(--color-accent);
+  color: var(--color-text);
+}
+
+.btn-edit {
+  background-color: #4CAF50;
+  color: white;
+}
+
+.btn-view:hover {
+  background-color: #e5ac27;
+}
+
+.btn-delete {
+  background-color: #f44336;
+  color: white;
+}
+
+.btn-edit:hover {
+  background-color: #45a049;
+}
+
+.btn-delete:hover {
+  background-color: #da190b;
+}
+
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+th, td {
+  padding: var(--spacing-small);
+  border: 1px solid var(--color-background);
+  text-align: left;
+}
+
+th {
+  background-color: var(--color-secondary);
+  color: var(--color-text-light);
+}
+
+.paginacion {
+  display: flex;
+  justify-content: center;
+  margin-top: var(--spacing-large);
+}
+
+.paginacion a {
+  padding: var(--spacing-small) var(--spacing-medium);
+  margin: 0 var(--spacing-small);
+  background-color: var(--color-primary);
+  color: var(--color-text-light);
+  text-decoration: none;
+  border-radius: var(--border-radius);
+}
+
+.paginacion a:hover {
+  background-color: var(--color-accent);
+}
+
+/* Estilos responsive */
+@media screen and (max-width: 1024px) {
+  /* Ajustes para tablets en horizontal y pantallas más pequeñas */
+  .container {
+    max-width: 95%;
+    padding: var(--spacing-small);
+  }
+
+  header {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  #logo {
+    width: 100%;
+    justify-content: center;
+    margin-bottom: var(--spacing-medium);
+  }
+
+  .navbar {
+    width: 100%;
+  }
+
+  .navbar ul {
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+
+  .card {
+    width: 80%;
+  }
+
+  .receta-thumbnail {
+    max-width: 100%;
+    max-height: 115px;
+    object-fit: cover;
+  }
+}
+
+@media screen and (max-width: 955px) {
+  /* Ajustes para tablets en vertical y dispositivos móviles en horizontal */
+  header h1 {
+    font-size: 1.5rem;
+  }
+
+  .navbar ul li {
+    font-size: 1rem;
+  }
+
+  .card {
+    width: 90%;
+  }
+
+  /* Ajustes para la tabla */
+  table {
+    border-collapse: separate;
+    border-spacing: 0 15px;
+  }
+
+  thead {
+    display: none; /* Ocultamos el thead en dispositivos móviles */
+  }
+
+  tr {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: flex-start;
+    margin-bottom: 20px;
+    background-color: var(--color-text-light);
+    box-shadow: var(--box-shadow);
+    border-radius: var(--border-radius);
+    padding: 15px;
+  }
+
+  td {
+    flex: 1 1 200px;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+    padding: 10px;
+    text-align: left;
+    margin-bottom: 10px;
+  }
+ 
+  td:before {
+    content: attr(data-label);
+    font-weight: bold;
+    margin-bottom: 5px;
+    color: var(--color-primary);
+  }
+
+  /* td:first-child::before{
+    display: none;
+  } */
+
+  td.acciones::before{
+    display: none;
+  }
+
+  /* Ajuste para la celda de la imagen */  
+  td:last-child {
+    flex-basis: 100%;
+    align-items: center;
+  }
+
+    /* Ajuste para la celda de los botones */
+    td:last-child {
+      flex-basis: 100%;
+      flex-direction: row;
+      justify-content: center;
+      flex-wrap: wrap;
+    }
+    
+    .btn {
+      margin: 5px;
+    }
+
+}
+
+@media screen and (max-width: 480px) {
+  /* Ajustes para dispositivos móviles en vertical */
+  header h1 {
+    font-size: 1.2rem;
+  }
+
+  .navbar {
+    padding: var(--spacing-small);
+  }
+
+  .navbar ul {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .navbar ul li {
+    margin-bottom: var(--spacing-small);
+  }
+
+  .card {
+    width: 100%;
+  }
+
+  /* Ajustes adicionales para la tabla en móviles */
+  td {
+    flex-basis: 100%;
+    align-items: center;
+    text-align: center;
+  }
+
+  td:before {
+    width: 100%;
+    text-align: center;
+  }
+
+  .btn {
+    display: block;
+    width: 100%;
+    margin: 10px 0;
+  }
+
+}
